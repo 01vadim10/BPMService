@@ -68,7 +68,6 @@ D:\Work\Projects\C#\BPMService\BPMService.WebUI\obj\Debug\BPMService.WebUI.pdb
 D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\BPMService.WebUI.dll.config
 D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\BPMService.WebUI.dll
 D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\BPMService.WebUI.pdb
-D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\BPMService.Domain.dll
 D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\Microsoft.Data.Edm.dll
 D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\Microsoft.Data.OData.dll
 D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\Microsoft.Data.Services.Client.dll
@@ -79,7 +78,6 @@ D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\System.Web.Razor.dll
 D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\System.Web.Webpages.Deployment.dll
 D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\System.Web.Webpages.dll
 D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\System.Web.Webpages.Razor.dll
-D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\BPMService.Domain.pdb
 D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\Microsoft.Data.Edm.xml
 D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\Microsoft.Data.OData.xml
 D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\Microsoft.Data.Services.Client.xml

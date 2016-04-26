@@ -13,7 +13,7 @@ namespace BPMService.WebUI.Controllers
         {
             if (LoginClass.TryLogin())
             {
-                ViewBag.Contacts = EDProxyService.GetOdataCollection();
+                ViewBag.Contacts = EDProxyService.GetOdataCollection(79);
             }
             return View();
         }
