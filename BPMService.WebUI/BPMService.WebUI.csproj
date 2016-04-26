@@ -112,6 +112,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ContactsV.cs" />
+    <Compile Include="Models\ContactView.cs" />
     <Compile Include="Models\EDProxyService.cs" />
     <Compile Include="Models\LoginClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -138,12 +140,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BPMService.Domain\BPMService.Domain.csproj">
-      <Project>{fe7e8c8f-1484-4a03-9d7f-15ed4ac75cc4}</Project>
-      <Name>BPMService.Domain</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

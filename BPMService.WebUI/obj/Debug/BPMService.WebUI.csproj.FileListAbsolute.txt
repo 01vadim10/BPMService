@@ -1,7 +1,6 @@
 D:\Work\Projects\C#\BPMService\BPMService.WebUI\bin\BPMService.WebUI.dll.config
 D:\Work\Projects\C#\BPMService\BPMService.WebUI\bin\BPMService.WebUI.dll
 D:\Work\Projects\C#\BPMService\BPMService.WebUI\bin\BPMService.WebUI.pdb
-D:\Work\Projects\C#\BPMService\BPMService.WebUI\bin\BPMService.Domain.dll
 D:\Work\Projects\C#\BPMService\BPMService.WebUI\bin\Microsoft.Data.Edm.dll
 D:\Work\Projects\C#\BPMService\BPMService.WebUI\bin\Microsoft.Data.OData.dll
 D:\Work\Projects\C#\BPMService\BPMService.WebUI\bin\Microsoft.Data.Services.Client.dll
@@ -12,7 +11,6 @@ D:\Work\Projects\C#\BPMService\BPMService.WebUI\bin\System.Web.Razor.dll
 D:\Work\Projects\C#\BPMService\BPMService.WebUI\bin\System.Web.Webpages.Deployment.dll
 D:\Work\Projects\C#\BPMService\BPMService.WebUI\bin\System.Web.Webpages.dll
 D:\Work\Projects\C#\BPMService\BPMService.WebUI\bin\System.Web.Webpages.Razor.dll
-D:\Work\Projects\C#\BPMService\BPMService.WebUI\bin\BPMService.Domain.pdb
 D:\Work\Projects\C#\BPMService\BPMService.WebUI\bin\Microsoft.Data.Edm.xml
 D:\Work\Projects\C#\BPMService\BPMService.WebUI\bin\Microsoft.Data.OData.xml
 D:\Work\Projects\C#\BPMService\BPMService.WebUI\bin\Microsoft.Data.Services.Client.xml
@@ -137,3 +135,4 @@ D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\ru\System.Web.Mvc.resources.d
 D:\Job\C# Learning\BPMService\BPMService.WebUI\obj\Debug\BPMService.WebUI.dll
 D:\Job\C# Learning\BPMService\BPMService.WebUI\obj\Debug\BPMService.WebUI.pdb
 D:\Job\C# Learning\BPMService\BPMService.WebUI\obj\Debug\BPMService.WebUI.csprojResolveAssemblyReference.cache
+d:\Work\Projects\C#\BPMService\BPMService.WebUI\obj\Debug\BPMService.WebUI.csprojResolveAssemblyReference.cache

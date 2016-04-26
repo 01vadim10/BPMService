@@ -11,9 +11,9 @@ namespace BPMService.WebUI.Controllers
     {
         public ActionResult Index()
         {
-            if (LoginClass.TryLogin("Пользователь 1", "Пользователь 1"))
+            if (LoginClass.TryLogin())
             {
-                EDProxyService.GetOdataCollection();
+                ViewBag.Contacts = EDProxyService.GetOdataCollection();
             }
             return View();
         }

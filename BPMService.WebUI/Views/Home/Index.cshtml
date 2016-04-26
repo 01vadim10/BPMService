@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Контакты";
 }
 
@@ -14,6 +13,16 @@
             <th>Должность</th>
             <th>Дата рождения</th>
         </tr>
+
+        @foreach (var item in ViewBag.Contacts) {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.MobilePhone</td>
+            <td>@item.Dear</td>
+            <td>@item.JobTitle</td>
+            <td>@item.BirthDate</td>
+        </tr>
+        }
     </thead>
 </table>
 

@@ -15,7 +15,7 @@ namespace BPMService.WebUI.Models
         // Параметры:
         // userName - имя пользователя bpm'online,
         // userPassword - пароль пользователя bpm'online.
-        public static bool TryLogin(string userName, string userPassword)
+        public static bool TryLogin(string userName = "Пользователь 1", string userPassword = "Пользователь 1")
         {
             // Создание экземпляра запроса к сервису аутентификации.
             var authRequest = HttpWebRequest.Create(authServiceUri) as HttpWebRequest;

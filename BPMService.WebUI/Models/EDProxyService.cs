@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Linq;
 using System.Data.Services.Client;
@@ -14,15 +15,17 @@ namespace BPMService.WebUI.Models
         public static void OnSendingRequestCookie(object sender, SendingRequestEventArgs e)
         {
             //Вызов метода класса LoginClass, реализующего аутентификацию переданного в параметрах метода пользователя.
-            LoginClass.TryLogin("Пользователь 1", "Пользователь 1");
+            LoginClass.TryLogin();
             var req = e.Request as HttpWebRequest;
             //Добавление полученных аутентификационных cookie в запрос на получение данных.
             req.CookieContainer = LoginClass.AuthCookie;
             e.Request = req;
         }
 
-        public static void GetOdataCollection()
+        public static ContactView[] GetOdataCollection()
         {
+            //Создание массива контактов
+            ContactView[] contactsView = {};
             // Создание контекста приложения BPMonline.
             var context = new BPMonline(serverUri);
             // Определение метода, который добавляет аутентификационные cookie при создании нового запроса.
@@ -31,16 +34,30 @@ namespace BPMService.WebUI.Models
             {
                 // Построение запроса LINQ для получение коллекции контактов.
                 var allContacts = from contacts in context.ContactCollection
-                                  select contacts;
-                foreach (Contact contact in allContacts)
+                                  select new
+                                  {
+                                      contacts.BirthDate,
+                                      contacts.Dear,
+                                      contacts.JobTitle,
+                                      contacts.MobilePhone,
+                                      contacts.Name
+                                  };
+                //return allContacts;
+                int i = 0;
+                foreach(var contact in allContacts)
                 {
-                    //Пишем в базу данных контакты
+                    contactsView[i].Name = (string) contact.Name;
+                    contactsView[i].BirthDate = contact.BirthDate;
+                    contactsView[i].Dear = contact.Dear;
+                    contactsView[i].JobTitle = contact.JobTitle;
+                    contactsView[i++].MobilePhone = contact.MobilePhone;
                 }
             }
             catch (Exception ex)
             {
                 // Обработка ошибок.
             }
+            return contactsView;
         }
     }
 }
