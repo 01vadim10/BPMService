@@ -1,0 +1,15 @@
+﻿@model BPMService.WebUI.BPMonlineSvcRef.Contact
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit @Model.Name</h1>
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel()
+    <input type="submit" value="Save" />
+    @Html.ActionLink("Отменить и вернуться к списку Контактов", "Index")
+}
+

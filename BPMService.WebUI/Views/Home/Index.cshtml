@@ -1,28 +1,45 @@
-﻿@{
+﻿@model IEnumerable<BPMService.WebUI.BPMonlineSvcRef.Contact>
+
+@{
     ViewBag.Title = "Контакты";
 }
 
-<h4>Контакты</h4>
+<table class="Grid">
+    <tr>
+        <th>Имя</th>
+        <th>Мобильный телефон</th>
+        <th>Обращение в заг. письма</th>
+        <th>Должность</th>
+        <th>Дата рождения</th>
+        <th>Изменить</th>
+        <th>Удалить</th>
+    </tr>
 
-<table width="90%" align="center" border="1">
-    <thead>
-        <tr>
-            <th>Имя</th>
-            <th>Мобильный телефон</th>
-            <th>Обращение в заг. письма</th>
-            <th>Должность</th>
-            <th>Дата рождения</th>
-        </tr>
-
-        @foreach (var item in ViewBag.Contacts) {
-        <tr>
-            <td>@item.Name</td>
-            <td>@item.MobilePhone</td>
-            <td>@item.Dear</td>
-            <td>@item.JobTitle</td>
-            <td>@item.BirthDate</td>
-        </tr>
-        }
-    </thead>
+    @foreach (var item in Model) {
+    <tr>
+        <td>@item.Name</td>
+        <td>@item.MobilePhone</td>
+        <td>@item.Dear</td>
+        <td>@item.JobTitle</td>
+        <td>@item.BirthDate</td>
+        <td>
+            @using (Html.BeginForm("Edit", "Home"))
+            {
+                @Html.Hidden("Id", item.Id)
+                <input type="submit" value="Edit" />
+            }
+        </td>
+        <td>
+            @using (Html.BeginForm("Delete", "Home"))
+            {
+                @Html.Hidden("Id", item.Id)
+                <input type="submit" value="Delete" />
+            }
+        </td>
+    </tr>
+    }
 </table>
 
+<p>
+    @Html.ActionLink("Создать новый контакт", "Create")
+</p>

@@ -11,7 +11,7 @@ namespace BPMService.WebUI.Models
         // Cookie аутентификации bpm'online.
         public static CookieContainer AuthCookie = new CookieContainer();
 
-        // Метод выполняет аутентификацию пользователя .
+        // Метод выполняет аутентификацию пользователя.
         // Параметры:
         // userName - имя пользователя bpm'online,
         // userPassword - пароль пользователя bpm'online.
