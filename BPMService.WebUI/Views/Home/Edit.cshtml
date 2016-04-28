@@ -6,10 +6,28 @@
 }
 
 <h1>Edit @Model.Name</h1>
-@using (Html.BeginForm())
+@using (Html.BeginForm("Save", "Home"))
 {
-    @Html.EditorForModel()
-    <input type="submit" value="Save" />
+    //@Html.EditorForModel()
+    <div class="dataElem">
+        <label>Имя</label>
+        @Html.EditorFor(m => m.Name)
+    </div>
+    <div class="dataElem">
+        <label>Мобильный телефон</label>
+        @Html.EditorFor(m => m.MobilePhone)
+    </div>
+    <div class="dataElem">
+        <label>Должность</label>
+        @Html.EditorFor(m => m.JobTitle)
+    </div>
+    <div class="dataElem">
+        <label>Дата рождения</label>
+        @Html.EditorFor(m => m.BirthDate)
+    </div>
+    <div>
+        <input type="submit" value="Save" />
+    </div>
     @Html.ActionLink("Отменить и вернуться к списку Контактов", "Index")
 }
 

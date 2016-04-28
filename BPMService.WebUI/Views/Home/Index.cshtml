@@ -4,7 +4,7 @@
     ViewBag.Title = "Контакты";
 }
 
-<table class="Grid">
+<table width="90%" align="center">
     <tr>
         <th>Имя</th>
         <th>Мобильный телефон</th>
@@ -25,14 +25,14 @@
         <td>
             @using (Html.BeginForm("Edit", "Home"))
             {
-                @Html.Hidden("Id", item.Id)
+                @Html.Hidden("contactId", item.Id)
                 <input type="submit" value="Edit" />
             }
         </td>
         <td>
             @using (Html.BeginForm("Delete", "Home"))
             {
-                @Html.Hidden("Id", item.Id)
+                @Html.Hidden("contactId", item.Id)
                 <input type="submit" value="Delete" />
             }
         </td>

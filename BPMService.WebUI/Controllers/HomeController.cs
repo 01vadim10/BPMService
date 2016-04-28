@@ -13,20 +13,24 @@ namespace BPMService.WebUI.Controllers
     {
         private IEnumerable<Contact> contactsApi;
 
-        //public HomeController(IEnumerable<Contact> contacts)
-        //{
-        //    contactsApi = contacts;
-        //}
-
-        public ActionResult Index()
+        public HomeController()
         {
             if (LoginClass.TryLogin())
             {
                 //ViewBag.Contacts = EDProxyService.GetOdataCollection();
                 contactsApi = EDProxyService.GetOdataCollection(180);
-                return View(contactsApi);
             }
-            return View();
+        }
+
+        public ActionResult Index()
+        {
+            //if (LoginClass.TryLogin())
+            //{
+            //    //ViewBag.Contacts = EDProxyService.GetOdataCollection();
+            //    this.contactsApi = EDProxyService.GetOdataCollection(180);
+            ////    return View(contactsApi);
+            //}
+            return View(contactsApi);
         }
 
         public ViewResult Create()
@@ -38,6 +42,21 @@ namespace BPMService.WebUI.Controllers
         {
             Contact contact = contactsApi.FirstOrDefault(p => p.Id == contactId);
             return View(contact);
+        }
+
+        [HttpPost]
+        public ActionResult Save(Contact contact)
+        {
+            if (ModelState.IsValid)
+            {
+                EDProxyService.UpdateContact(/*contact*/);
+                TempData["message"] = string.Format("Изменения контакта {0} были сохранены", contact.Name);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View(contact);
+            }
         }
 
         public void Delete(Guid contactId)
