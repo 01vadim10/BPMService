@@ -11,6 +11,8 @@ namespace BPMService.WebUI.Models
     {
         //Объявление переменной адреса сервиса OData
         private static Uri serverUri = new Uri("http://178.159.246.209:1410/0/ServiceModel/EntityDataService.svc");
+        // Создание контекста приложения BPMonline.
+        private static BPMonline context = new BPMonline(serverUri);
 
         public static void OnSendingRequestCookie(object sender, SendingRequestEventArgs e)
         {
@@ -27,10 +29,9 @@ namespace BPMService.WebUI.Models
         {
             //Создание массива контактов
             IEnumerable<Contact> allContacts = null;
-            // Создание контекста приложения BPMonline.
-            var context = new BPMonline(serverUri);
             // Определение метода, который добавляет аутентификационные cookie при создании нового запроса.
             context.SendingRequest += new EventHandler<SendingRequestEventArgs>(OnSendingRequestCookie);
+
             try
             {
                 // Построение запроса LINQ для получение коллекции контактов.
@@ -54,39 +55,37 @@ namespace BPMService.WebUI.Models
                 Name = "Kevin Mitnik 22"
             };
             // Создание и инициализация свойств нового контрагента, к которому относится создаваемый контакт. 
-            var account = new Account()
-            {
-                Id = Guid.NewGuid(),
-                Name = "Cult of The Dead Cow"
-            };
-            contact.Account = account;
-            // Создание контекста приложения BPMonline.
-            var context = new BPMonline(serverUri);
+            //var account = new Account()
+            //{
+            //    Id = Guid.NewGuid(),
+            //    Name = "Cult of The Dead Cow"
+            //};
+            //contact.Account = account;
             // Определение метода, который добавляет аутентификационные cookie при создании нового запроса.
             context.SendingRequest += new EventHandler<SendingRequestEventArgs>(OnSendingRequestCookie);
             // Добавление созданного контакта в коллекцию контактов модели данных сервиса.
-            context.AddToAccountCollection(account);
+            ////context.AddToAccountCollection(account);
             // Добавление созданного контрагента в коллекцию контрагентов модели данных сервиса.
             context.AddToContactCollection(contact);
             // Установка связи между созданными контактом и контрагентом в модели данных сервиса.
-            context.SetLink(contact, "Account", account);
+            //context.SetLink(contact, "Account", account);
             // Сохранение изменений данных в BPMonline одним запросом.
             DataServiceResponse responces = context.SaveChanges(SaveChangesOptions.Batch);
             // Обработка ответов от сервера.
         }
 
         //Изменение существующего объекта
-        public static void UpdateContact(/*Contact contact*/)
+        public static void UpdateContact(Contact contact)
         {
-            // Создание контекста приложения BPMonline.
-            var context = new BPMonline(serverUri);
             // Определение метода, который добавляет аутентификационные cookie при создании нового запроса.
             context.SendingRequest += new EventHandler<SendingRequestEventArgs>(OnSendingRequestCookie);
             // Из колллекции контактов выбирается тот, по которому будет изменяться информация.
-            var updateContact = context.ContactCollection.Where(c => c.Name.Contains("Mitnik")).First();
+            var updateContact = context.ContactCollection.Where(c => c.Id.Equals(contact.Id)).First();
             // Изменение свойств выбранного контакта.
-            updateContact.Notes = "New updated description for this contact.";
-            updateContact.Phone = "123456789";
+            updateContact.Name = contact.Name;
+            updateContact.MobilePhone = contact.MobilePhone;
+            updateContact.JobTitle = contact.JobTitle;
+            updateContact.BirthDate = contact.BirthDate;
             // Сохранение изменений в модели данных сервиса.
             context.UpdateObject(updateContact);
             // Сохранение изменений данных в BPMonline одним запросом.
@@ -96,12 +95,9 @@ namespace BPMService.WebUI.Models
         //Удаление объекта
         public static void DeleteContact(Guid contactId)
         {
-            // Создание контекста приложения BPMonline.
-            var context = new BPMonline(serverUri);
-
             context.SendingRequest += new EventHandler<SendingRequestEventArgs>(OnSendingRequestCookie);
             // Из коллекции контактов выбирается тот объект, который будет удален.
-            var deleteContact = context.ContactCollection.Where(c => c.Id == contactId);
+            var deleteContact = context.ContactCollection.Where(c => c.Id.Equals(contactId)).First();
             // Удаление выбранного объекта из модели данных сервиса.
             context.DeleteObject(deleteContact);
             // Сохранение изменений данных в BPMonline одним запросом.

@@ -35,7 +35,13 @@ namespace BPMService.WebUI.Controllers
 
         public ViewResult Create()
         {
-            return View();
+            //if (ModelState.IsValid)
+            //{
+            //    EDProxyService.CreateContact();
+            //    TempData["message"] = string.Format("Контакт был создан"/*, contact.Name*/);
+            //}
+            
+            return View("Edit", new Contact());
         }
 
         public ViewResult Edit(Guid contactId)
@@ -45,11 +51,11 @@ namespace BPMService.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Save(Contact contact)
+        public ActionResult Edit(Contact contact)
         {
             if (ModelState.IsValid)
             {
-                EDProxyService.UpdateContact(/*contact*/);
+                EDProxyService.UpdateContact(contact);
                 TempData["message"] = string.Format("Изменения контакта {0} были сохранены", contact.Name);
                 return RedirectToAction("Index");
             }
@@ -59,9 +65,18 @@ namespace BPMService.WebUI.Controllers
             }
         }
 
-        public void Delete(Guid contactId)
+        public ActionResult Delete(Guid contactId)
         {
-            EDProxyService.DeleteContact(contactId);
+            if (ModelState.IsValid)
+            {
+                EDProxyService.DeleteContact(contactId);
+                TempData["message"] = "Удаление контакта было произведено";
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
         }
 	}
 }

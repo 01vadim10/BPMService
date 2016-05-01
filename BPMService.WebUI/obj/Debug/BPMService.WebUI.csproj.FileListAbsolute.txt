@@ -65,7 +65,6 @@ D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\ru\System.Web.Helpers.resourc
 D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\ru\System.Web.Mvc.resources.dll
 D:\Job\C# Learning\BPMService\BPMService.WebUI\obj\Debug\BPMService.WebUI.dll
 D:\Job\C# Learning\BPMService\BPMService.WebUI\obj\Debug\BPMService.WebUI.pdb
-D:\Job\C# Learning\BPMService\BPMService.WebUI\obj\Debug\BPMService.WebUI.csprojResolveAssemblyReference.cache
 D:\Work\Projects\C#\BPMService\BPMService.WebUI\bin\BPMService.WebUI.dll.config
 D:\Work\Projects\C#\BPMService\BPMService.WebUI\bin\BPMService.WebUI.dll
 D:\Work\Projects\C#\BPMService\BPMService.WebUI\bin\BPMService.WebUI.pdb
@@ -134,3 +133,4 @@ D:\Work\Projects\C#\BPMService\BPMService.WebUI\bin\ru\System.Web.Mvc.resources.
 D:\Work\Projects\C#\BPMService\BPMService.WebUI\obj\Debug\BPMService.WebUI.dll
 D:\Work\Projects\C#\BPMService\BPMService.WebUI\obj\Debug\BPMService.WebUI.pdb
 D:\Work\Projects\C#\BPMService\BPMService.WebUI\obj\Debug\BPMService.WebUI.csprojResolveAssemblyReference.cache
+D:\Job\C# Learning\BPMService\BPMService.WebUI\obj\Debug\BPMService.WebUI.csprojResolveAssemblyReference.cache

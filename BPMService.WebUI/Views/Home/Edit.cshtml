@@ -6,28 +6,30 @@
 }
 
 <h1>Edit @Model.Name</h1>
-@using (Html.BeginForm("Save", "Home"))
-{
-    //@Html.EditorForModel()
-    <div class="dataElem">
-        <label>Имя</label>
-        @Html.EditorFor(m => m.Name)
-    </div>
-    <div class="dataElem">
-        <label>Мобильный телефон</label>
-        @Html.EditorFor(m => m.MobilePhone)
-    </div>
-    <div class="dataElem">
-        <label>Должность</label>
-        @Html.EditorFor(m => m.JobTitle)
-    </div>
-    <div class="dataElem">
-        <label>Дата рождения</label>
-        @Html.EditorFor(m => m.BirthDate)
-    </div>
-    <div>
-        <input type="submit" value="Save" />
-    </div>
-    @Html.ActionLink("Отменить и вернуться к списку Контактов", "Index")
-}
-
+<div class="editor">
+    @using (Html.BeginForm(/*"Save", "Home"*/))
+    {
+        //@Html.EditorForModel()
+        <div>
+            <label>Имя</label><br />
+            @Html.EditorFor(m => m.Name)
+        </div>
+        <div>
+            <label>Мобильный телефон</label><br />
+            @Html.EditorFor(m => m.MobilePhone)
+        </div>
+        <div>
+            <label>Должность</label><br />
+            @Html.EditorFor(m => m.JobTitle)
+        </div>
+        <div>
+            <label>Дата рождения</label><br />
+            @Html.EditorFor(m => m.BirthDate)
+        </div>
+        <div>
+            @Html.HiddenFor(m => m.Id, "Value")
+            <input type="submit" value="Save" />
+        </div>
+        @Html.ActionLink("Отменить и вернуться к списку Контактов", "Index")
+    }
+</div>
