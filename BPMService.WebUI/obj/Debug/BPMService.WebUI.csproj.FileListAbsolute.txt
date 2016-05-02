@@ -132,5 +132,13 @@ D:\Work\Projects\C#\BPMService\BPMService.WebUI\bin\ru\System.Web.Helpers.resour
 D:\Work\Projects\C#\BPMService\BPMService.WebUI\bin\ru\System.Web.Mvc.resources.dll
 D:\Work\Projects\C#\BPMService\BPMService.WebUI\obj\Debug\BPMService.WebUI.dll
 D:\Work\Projects\C#\BPMService\BPMService.WebUI\obj\Debug\BPMService.WebUI.pdb
-D:\Job\C# Learning\BPMService\BPMService.WebUI\obj\Debug\BPMService.WebUI.csprojResolveAssemblyReference.cache
 D:\Work\Projects\C#\BPMService\BPMService.WebUI\obj\Debug\BPMService.WebUI.csprojResolveAssemblyReference.cache
+D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\Antlr3.Runtime.dll
+D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\Microsoft.Web.Infrastructure.dll
+D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\Newtonsoft.Json.dll
+D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\System.Web.Optimization.dll
+D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\WebGrease.dll
+D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\Antlr3.Runtime.pdb
+D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\Newtonsoft.Json.xml
+D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\System.Web.Optimization.xml
+D:\Job\C# Learning\BPMService\BPMService.WebUI\bin\ru\System.Web.Optimization.resources.dll

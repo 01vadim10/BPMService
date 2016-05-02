@@ -24,12 +24,6 @@ namespace BPMService.WebUI.Controllers
 
         public ActionResult Index()
         {
-            //if (LoginClass.TryLogin())
-            //{
-            //    //ViewBag.Contacts = EDProxyService.GetOdataCollection();
-            //    this.contactsApi = EDProxyService.GetOdataCollection(180);
-            ////    return View(contactsApi);
-            //}
             return View(contactsApi);
         }
 

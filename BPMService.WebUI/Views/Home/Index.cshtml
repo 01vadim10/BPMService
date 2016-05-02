@@ -21,7 +21,7 @@
         <td>@item.MobilePhone</td>
         <td>@item.Dear</td>
         <td>@item.JobTitle</td>
-        <td>@{ DateTime.Parse(item.BirthDate.ToString()); }</td>
+        <td>@item.BirthDate</td>
         <td>
             @using (Html.BeginForm("Edit", "Home"))
             {

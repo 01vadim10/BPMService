@@ -48,27 +48,10 @@ namespace BPMService.WebUI.Models
         //Создание нового объекта
         public static void CreateContact(Contact contact/*, Account account*/)
         {
-            // Создание нового контакта, инициализиция свойств.
-            //var contact = new Contact()
-            //{
-            //    Id = Guid.NewGuid(),
-            //    Name = "Kevin Mitnik 22"
-            //};
-            // Создание и инициализация свойств нового контрагента, к которому относится создаваемый контакт. 
-            //var account = new Account()
-            //{
-            //    Id = Guid.NewGuid(),
-            //    Name = "Cult of The Dead Cow"
-            //};
-            //contact.Account = account;
             // Определение метода, который добавляет аутентификационные cookie при создании нового запроса.
             context.SendingRequest += new EventHandler<SendingRequestEventArgs>(OnSendingRequestCookie);
             // Добавление созданного контакта в коллекцию контактов модели данных сервиса.
-            ////context.AddToAccountCollection(account);
-            // Добавление созданного контрагента в коллекцию контрагентов модели данных сервиса.
             context.AddToContactCollection(contact);
-            // Установка связи между созданными контактом и контрагентом в модели данных сервиса.
-            //context.SetLink(contact, "Account", account);
             // Сохранение изменений данных в BPMonline одним запросом.
             DataServiceResponse responces = context.SaveChanges(SaveChangesOptions.Batch);
             // Обработка ответов от сервера.
