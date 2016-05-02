@@ -1,0 +1,36 @@
+﻿@model BPMService.WebUI.BPMonlineSvcRef.Contact
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Создать @Model.Name</h1>
+<div>
+    @using (Html.BeginForm("Create", "Home", FormMethod.Post))
+    {
+        @Html.ValidationSummary()
+        <div>
+            <label>Имя</label><br />
+            @Html.EditorFor(m => m.Name)
+        </div>
+        <div>
+            <label>Мобильный телефон</label><br />
+            @Html.EditorFor(m => m.MobilePhone)
+        </div>
+        <div>
+            <label>Должность</label><br />
+            @Html.EditorFor(m => m.JobTitle)
+        </div>
+        <div>
+            <label>Дата рождения</label><br />
+            @Html.EditorFor(m => m.BirthDate)
+        </div>
+        <div>
+            @{ Model.Id = Guid.NewGuid(); }
+            @Html.HiddenFor(m => m.Id, "Value")
+            <input type="submit" value="Create" />
+        </div>
+        @Html.ActionLink("Отменить и вернуться к списку Контактов", "Index")
+    }
+</div>

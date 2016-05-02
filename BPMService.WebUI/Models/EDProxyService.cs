@@ -35,8 +35,8 @@ namespace BPMService.WebUI.Models
             try
             {
                 // Построение запроса LINQ для получение коллекции контактов.
-                allContacts = from contacts in context.ContactCollection.Take(take)
-                                  select contacts;
+                allContacts = (from contacts in context.ContactCollection.OrderByDescending(p => p.CreatedOn)
+                                  select contacts).Take(take);
             }
             catch (Exception ex)
             {
@@ -46,14 +46,14 @@ namespace BPMService.WebUI.Models
         }
 
         //Создание нового объекта
-        public static void CreateContact(/*Contact contact, Account account*/)
+        public static void CreateContact(Contact contact/*, Account account*/)
         {
             // Создание нового контакта, инициализиция свойств.
-            var contact = new Contact()
-            {
-                Id = Guid.NewGuid(),
-                Name = "Kevin Mitnik 22"
-            };
+            //var contact = new Contact()
+            //{
+            //    Id = Guid.NewGuid(),
+            //    Name = "Kevin Mitnik 22"
+            //};
             // Создание и инициализация свойств нового контрагента, к которому относится создаваемый контакт. 
             //var account = new Account()
             //{
@@ -83,6 +83,7 @@ namespace BPMService.WebUI.Models
             var updateContact = context.ContactCollection.Where(c => c.Id.Equals(contact.Id)).First();
             // Изменение свойств выбранного контакта.
             updateContact.Name = contact.Name;
+            updateContact.Dear = contact.Dear;
             updateContact.MobilePhone = contact.MobilePhone;
             updateContact.JobTitle = contact.JobTitle;
             updateContact.BirthDate = contact.BirthDate;

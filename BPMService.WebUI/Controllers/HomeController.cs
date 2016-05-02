@@ -18,7 +18,7 @@ namespace BPMService.WebUI.Controllers
             if (LoginClass.TryLogin())
             {
                 //ViewBag.Contacts = EDProxyService.GetOdataCollection();
-                contactsApi = EDProxyService.GetOdataCollection(180);
+                contactsApi = EDProxyService.GetOdataCollection();
             }
         }
 
@@ -35,13 +35,23 @@ namespace BPMService.WebUI.Controllers
 
         public ViewResult Create()
         {
-            //if (ModelState.IsValid)
-            //{
-            //    EDProxyService.CreateContact();
-            //    TempData["message"] = string.Format("Контакт был создан"/*, contact.Name*/);
-            //}
-            
-            return View("Edit", new Contact());
+            return View(new Contact());
+        }
+
+        [HttpPost]
+        public ActionResult Create(Contact newContact)
+        {
+            if (ModelState.IsValid)
+            {
+                EDProxyService.CreateContact(newContact);
+                TempData["message"] = string.Format("Контакт {0} был создан", newContact.Name);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View(newContact);
+            }
+
         }
 
         public ViewResult Edit(Guid contactId)
@@ -51,7 +61,7 @@ namespace BPMService.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(Contact contact)
+        public ActionResult Save(Contact contact)
         {
             if (ModelState.IsValid)
             {

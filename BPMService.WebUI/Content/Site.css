@@ -39,6 +39,9 @@ table, td, th {
 
 .editor {margin: 5px;}
 .editor-field { margin-bottom: .8em; }
-.editor-label { font-weight: bold; }
-.editor-label:after { content: ":" }
-.text-box { width: 25em; }
+.editor-label { font-weight: bold; margin-left: .8em }
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}

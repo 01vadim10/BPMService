@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />|
 </head>
 <body>
     <div id="header">
@@ -16,6 +16,9 @@
             <div class="Message">@TempData["message"]</div>
         }
         @RenderBody()
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryval")
+        @RenderSection("scripts", required: false)
     </div>
     <footer>
         <p>&copy; @DateTime.Now.Year - Cult of The Dead Cow</p>

@@ -7,9 +7,9 @@
 
 <h1>Edit @Model.Name</h1>
 <div class="editor">
-    @using (Html.BeginForm(/*"Save", "Home"*/))
+    @using (Html.BeginForm("Edit", "Home", FormMethod.Post))
     {
-        //@Html.EditorForModel()
+        @Html.ValidationSummary()
         <div>
             <label>Имя</label><br />
             @Html.EditorFor(m => m.Name)
