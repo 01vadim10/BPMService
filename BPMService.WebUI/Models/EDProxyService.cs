@@ -50,6 +50,9 @@ namespace BPMService.WebUI.Models
         {
             // Определение метода, который добавляет аутентификационные cookie при создании нового запроса.
             context.SendingRequest += new EventHandler<SendingRequestEventArgs>(OnSendingRequestCookie);
+            //Определение обращения Dear из Name
+            char delimeter = ' ';
+            contact.Dear = contact.Name.Split(delimeter)[0];
             // Добавление созданного контакта в коллекцию контактов модели данных сервиса.
             context.AddToContactCollection(contact);
             // Сохранение изменений данных в BPMonline одним запросом.

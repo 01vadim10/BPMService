@@ -61,12 +61,13 @@ namespace BPMService.WebUI.Controllers
             {
                 EDProxyService.UpdateContact(contact);
                 TempData["message"] = string.Format("Изменения контакта {0} были сохранены", contact.Name);
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
             }
             else
             {
-                return View(contact);
+                TempData["message"] = string.Format("Изменения контакта {0} не были сохранены", contact.Name);
             }
+            return RedirectToAction("Index");
         }
 
         public ActionResult Delete(Guid contactId)
