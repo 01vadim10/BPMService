@@ -6,8 +6,8 @@
 }
 
 <h1>Edit @Model.Name</h1>
-<div class="editor">
-    @using (Html.BeginForm("Edit", "Home", FormMethod.Post))
+<div>
+    @using (Html.BeginForm("Save", "Home"))
     {
         @Html.ValidationSummary()
         <div>
